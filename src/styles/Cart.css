@@ -1,0 +1,68 @@
+/* Style du panier*/
+.lmj-cart {
+	color: white;
+	background-color: #31b572;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 200px;
+}
+
+.lmj-cart-add-button {
+	margin-left: 32px;
+	cursor: pointer;
+}
+
+.lmj-cart-toggle-button {
+	background: none;
+	outline: none;
+	border: none;
+	border-bottom: 4px solid #a4d3bc;
+	padding-left: 5px;
+	font-size: 0.9em;
+	font-weight: 600;
+	cursor: pointer;
+	align-self: self-start;
+	/* padding: 0; */
+	color: white;
+}
+
+.lmj-button-clean-cart {
+	border: none;
+	background-color: #a4d3bc;
+	color: white;
+	border: 2px solid #a4d3bc;
+	border-radius: 5px;
+	padding: 5px 15px;
+	font-weight: bold;
+}
+
+.lmj-button-clean-cart:hover {
+	cursor: pointer;
+	background-color: white;
+	color: #88bba2;
+	border: 2px solid white;
+}
+
+.lmj-cart-closed {
+	padding: 32px;
+	width: 200px;
+}
+
+.lmj-cart-closed > button {
+	color: #31b472;
+	font-size: 1.2em;
+	border: 0;
+	border-left: 4px solid #31b472;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row-reverse;
+}
+
+.lmj-logo-cart {
+	width: 25px;
+	height: auto;
+	margin-right: 5px;
+}

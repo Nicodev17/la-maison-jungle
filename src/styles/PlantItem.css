@@ -1,0 +1,71 @@
+/* Style de chaque item plante */
+.lmj-plant-item-cover {
+	height: 250px;
+	width: 250px;
+	border-radius: 20px;
+	object-fit: cover;
+}
+
+.lmj-plant-item {
+	margin: 10px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	text-transform: capitalize;
+	position: relative;
+}
+
+.lmj-plant-item-price {
+	position: absolute;
+	border-radius: 20px 20px 20px 0;
+	background-color: #31b472;
+	color: white;
+	padding: 15px;
+	right: 0;
+	top: 0;
+	font-weight: 500;
+}
+
+.lmj-add-to-cart {
+	border: none;
+	background-color: #ffffff;
+	color: #8ac0a6;
+	border: 2px solid #8ac0a6;
+	border-radius: 5px;
+	padding: 5px 15px;
+	font-weight: bold;
+	outline: none;
+}
+
+.lmj-add-to-cart:hover {
+	cursor: pointer;
+	background-color: #8ac0a6;
+	color: white;
+}
+
+.lmj-care-scale-info {
+	position: relative;  /* les .infobulle deviennent référents */
+  	cursor: help;
+}
+
+.lmj-care-scale-info:hover::after,
+.lmj-care-scale-info:focus::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  position: absolute;
+  top: -2.1em;
+  left: 50%;
+  transform: translateX(-50%); /* on centre horizontalement  */
+  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+  white-space: nowrap;  /* on interdit le retour à la ligne */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.932);
+  border: 2px solid #8ac0a6;
+  border-radius: 10px;
+  color: #31b472;
+  text-transform: none;
+}
