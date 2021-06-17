@@ -1,5 +1,6 @@
 /* Style de la bannière du titre */
 .lmj-banner {
+	background-image: url('../assets/banner-background.jpg');
 	color: #31b572;
 	text-align: right;
 	padding: 32px;
@@ -11,7 +12,13 @@
 }
 
 .lmj-title {
-	padding-left: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	padding: 0 20px 0 25px;
+	background-color: rgba(255, 255, 255, 0.801);
+	border-radius: 30px 5px;
 }
 
 .lmj-logo {

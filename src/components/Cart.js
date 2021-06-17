@@ -4,14 +4,19 @@ import logoCart from '../assets/logo_cart.png';
 
 function Cart({ cart, updateCart }) {
     const [isOpen, setIsOpen] = useState(false);
-    const total = cart.reduce(
+    const totalPrice = cart.reduce(
         (acc, plantType) => acc + plantType.amount * plantType.price,
         0
     );
 
+    const totalItems = cart.reduce(
+        (acc, plantType) => acc + plantType.amount,
+        0
+    );
+
     useEffect(() => {
-        document.title = `LMJ: ${total}€ d'achats`;
-    }, [total]);
+        document.title = `JH: ${totalPrice}€ d'achat`;
+    }, [totalPrice]);
 
     return isOpen ? (
         <div className='lmj-cart'>
@@ -26,13 +31,15 @@ function Cart({ cart, updateCart }) {
                     <h2>Panier</h2>
                     <ul>
                         {cart.map(({ name, price, amount }, index) => (
-                            <div key={`${name}-${index}`}>
-                                {name} {price}€ x {amount} 
+                            <div key={`${name}-${index}`} className="lmj-item-cart">
+                                • {name} {price}€ × {amount}
                             </div>
                         ))}
                     </ul>
 
-                    <h3>Total : {total}€</h3>
+
+                    <h3>Total : {totalPrice}€</h3>
+                    {totalItems >= 2 ? <p>({totalItems} articles)</p> : <p>({totalItems} article)</p>}
                     <button className='lmj-button-clean-cart' onClick={() => updateCart([])}>Vider le panier</button>
                 </div>
             ) : (
@@ -50,6 +57,7 @@ function Cart({ cart, updateCart }) {
                 <img src={logoCart} className='lmj-logo-cart' alt='logo panier'/>
                 Panier
             </button>
+            {totalItems >= 1 ? <span>{totalItems}</span> : null}
         </div>
     )
 }
