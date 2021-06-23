@@ -16,21 +16,23 @@ function Footer() {
 
 	return (
 		<footer className='lmj-footer'>
-			<div className='lmj-footer-elem'>
-				Pour les passionnés de plantes 🌿🌱🌵
-			</div>
-			<div className='lmj-footer-elem'>Laissez-nous votre @mail :
-				<input 
-					className='lmj-footer-field'
-					placeholder='Entrez votre mail'
-					onChange={handleInput}
-					value={inputValue} 
-					onBlur={handleBlur}
-				/>
-				<button onClick={() => 
-					alert("Merci, nous vous enverrons bientôt des nouvelles sur votre adresse mail : " + inputValue)}> 
-					Valider 
-				</button>
+			<div className='lmj-content-footer'>
+				<div className='lmj-footer-elem'>
+					Pour les passionnés de plantes 🌿🌱🌵
+				</div>
+				<div className='lmj-footer-elem'>Laissez-nous votre @mail :
+					<input 
+						className='lmj-footer-field'
+						placeholder='Entrez votre mail'
+						onChange={handleInput}
+						value={inputValue} 
+						onBlur={handleBlur}
+					/>
+					<button onClick={() => 
+						alert("Merci, nous vous enverrons bientôt des nouvelles sur votre adresse mail : " + inputValue)}> 
+						Valider 
+					</button>
+				</div>
 			</div>
 		</footer>
 	)
