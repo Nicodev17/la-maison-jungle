@@ -1,4 +1,5 @@
 .lmj-footer {
+	background-image: url('../assets/banner-background.jpg');
 	color: rgb(65, 65, 65);
 	padding: 32px;
 	border-top: solid 3px rgb(146, 146, 146);
@@ -11,6 +12,12 @@
 
 .lmj-footer-elem {
 	margin-bottom: 10px;
+}
+
+.lmj-content-footer {
+	padding: 15px 30px 15px 30px;
+	background-color: rgba(255, 255, 255, 0.801);
+	border-radius: 15px;
 }
 
 .lmj-footer-field {

@@ -40,6 +40,7 @@ function Cart({ cart, updateCart }) {
 
                     <h3>Total : {totalPrice}€</h3>
                     {totalItems >= 2 ? <p>({totalItems} articles)</p> : <p>({totalItems} article)</p>}
+                    <button className='lmj-button-pay-cart'>Commander</button>
                     <button className='lmj-button-clean-cart' onClick={() => updateCart([])}>Vider le panier</button>
                 </div>
             ) : (
