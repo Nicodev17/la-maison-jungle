@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import '../styles/Cart.css';
 import logoCart from '../assets/logo_cart.png';
 
@@ -14,6 +14,25 @@ function Cart({ cart, updateCart }) {
         0
     );
 
+    function removeToCart(amount, name, price) {
+        const currentPlantToRemove = cart.find((plant) => plant.name === name);
+        
+        const cartFilteredCurrentPlant = cart.filter(
+            (plant) => plant.name !== name
+        );
+
+        if(amount === 1) {
+            updateCart([
+                ...cartFilteredCurrentPlant
+            ]);
+        } else {
+            updateCart([
+                ...cartFilteredCurrentPlant,
+                { name, price, amount: currentPlantToRemove.amount - 1 }
+            ]);
+        }
+    }
+    
     useEffect(() => {
         document.title = `JH: ${totalPrice}€ d'achat`;
     }, [totalPrice]);
@@ -32,7 +51,8 @@ function Cart({ cart, updateCart }) {
                     <ul>
                         {cart.map(({ name, price, amount }, index) => (
                             <div key={`${name}-${index}`} className="lmj-item-cart">
-                                • {name} {price}€ × {amount}
+                                • {name} {price}€ × {amount} 
+                                <button className='lmj-remove-item-cart' title='Retirer un article' onClick={() => removeToCart(amount, name, price)}> X </button>
                             </div>
                         ))}
                     </ul>
@@ -58,7 +78,17 @@ function Cart({ cart, updateCart }) {
                 <img src={logoCart} className='lmj-logo-cart' alt='logo panier'/>
                 Panier
             </button>
-            {totalItems >= 1 ? <span>{totalItems}</span> : null}
+            {totalItems >= 1 ?
+                <div> 
+                    <span>{totalItems}</span>
+                    <div className='lmj-cart-add-pop-box'> 
+                        <div className='lmj-cart-add-pop'></div>
+                        <div className='lmj-cart-add-pop'></div>
+                        <div className='lmj-cart-add-pop'></div>
+                    </div>
+                   
+                </div> 
+            : null}
         </div>
     )
 }
