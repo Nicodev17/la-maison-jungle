@@ -24,3 +24,9 @@
 	background-color: #ffffff;
 	color: #31b472;
 }
+
+@media  screen and (max-width: 700px) {
+	.lmj-categories {
+		margin-top: 50px;
+	}
+}
