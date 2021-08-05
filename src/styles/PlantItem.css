@@ -7,7 +7,7 @@
 }
 
 .lmj-plant-item {
-	margin: 10px;
+	margin: 20px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -28,6 +28,7 @@
 }
 
 .lmj-add-to-cart {
+	margin-left: 20px;
 	border: none;
 	background-color: #ffffff;
 	color: #8ac0a6;
