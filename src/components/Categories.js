@@ -8,7 +8,7 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
                 onChange={(e) => setActiveCategory(e.target.value)}
                 className='lmj-categories-select'
             >
-                <option value=''> Filtrer les plantes à afficher </option>
+                <option value=''>Filtrer par type de plante</option>
                 {categories.map((categories) => (
                     <option key={categories} value={categories}>
                         { categories }
