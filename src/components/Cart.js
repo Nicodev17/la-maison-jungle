@@ -52,16 +52,18 @@ function Cart({ cart, updateCart }) {
                         {cart.map(({ name, price, amount }, index) => (
                             <div key={`${name}-${index}`} className="lmj-item-cart">
                                 • {name} {price}€ × {amount} 
-                                <button className='lmj-remove-item-cart' title='Retirer un article' onClick={() => removeToCart(amount, name, price)}> X </button>
+                                <button className='lmj-remove-item-cart' title='Retirer un article' onClick={() => removeToCart(amount, name, price)}> ✖ </button>
                             </div>
                         ))}
                     </ul>
 
 
                     <h3>Total : {totalPrice}€</h3>
-                    {totalItems >= 2 ? <p>({totalItems} articles)</p> : <p>({totalItems} article)</p>}
-                    <button className='lmj-button-pay-cart'>Commander</button>
-                    <button className='lmj-button-clean-cart' onClick={() => updateCart([])}>Vider le panier</button>
+                    {totalItems >= 2 ? <p className='lmj-cart-total-items'>({totalItems} articles)</p> : <p className='lmj-cart-total-items'>({totalItems} article)</p>}
+                    <div className='lmj-cart-buttons-box'>
+                        <button className='lmj-button-pay-cart'>Commander</button>
+                        <button className='lmj-button-clean-cart' onClick={() => updateCart([])}>Vider le panier</button>
+                    </div>
                 </div>
             ) : (
                 <div>
