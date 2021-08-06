@@ -13,6 +13,7 @@ function ShoppingList({ cart, updateCart }) {
             []
     );
 
+
     function addToCart(name, price) {
         const currentPlantSaved = cart.find((plant) => plant.name === name);
         if (currentPlantSaved) {
