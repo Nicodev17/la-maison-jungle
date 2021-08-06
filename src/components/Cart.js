@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import '../styles/Cart.css';
 import logoCart from '../assets/logo_cart.png';
 
@@ -33,15 +33,39 @@ function Cart({ cart, updateCart }) {
         }
     }
     
+    const refCart = useRef(null);
+    const refAddPop = useRef(null);
+
     useEffect(() => {
         document.title = `JH: ${totalPrice}€ d'achat`;
-    }, [totalPrice]);
+        
+        if(isOpen === true) {
+            refCart.current.classList.add('open');
+            refCart.current.classList.remove('close');
+
+        } else { 
+            refCart.current.classList.remove('open');
+            refCart.current.classList.add('close');
+        }
+        
+    }, [totalPrice, isOpen]);
+
+    useEffect(() => {
+        if (totalItems >= 1 && isOpen === false) {
+            refAddPop.current.classList.add('active');
+        
+            setTimeout(() => {
+                refAddPop.current.classList.remove('active');
+            }, 500);
+        }
+    }, [totalItems, isOpen])
+    
 
     return isOpen ? (
-        <div className='lmj-cart'>
+        <div className='lmj-cart' ref={refCart}>
             <button 
                 className='lmj-cart-toggle-button'
-                onClick={() => setIsOpen(false)}> 
+                onClick={() => setIsOpen(false)}>
                 Fermer
             </button>
 
@@ -73,7 +97,7 @@ function Cart({ cart, updateCart }) {
             )}
         </div>
     ) : (
-        <div className='lmj-cart-closed'> 
+        <div className='lmj-cart-closed' ref={refCart}> 
             <button
                 className='lmj-cart-toggle-button'
                 onClick={()=> setIsOpen(true)}>
@@ -83,12 +107,12 @@ function Cart({ cart, updateCart }) {
             {totalItems >= 1 ?
                 <div> 
                     <span>{totalItems}</span>
-                    <div className='lmj-cart-add-pop-box'> 
+                    <div className='lmj-cart-add-pop-box' ref={refAddPop}> 
                         <div className='lmj-cart-add-pop'></div>
                         <div className='lmj-cart-add-pop'></div>
                         <div className='lmj-cart-add-pop'></div>
                     </div>
-                   
+                
                 </div> 
             : null}
         </div>
