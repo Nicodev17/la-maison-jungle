@@ -1,10 +1,10 @@
 /* Style du panier*/
 .lmj-cart {
-	position: absolute;
+	position: fixed;
 	transform: translateX(-350px);
 	width: 250px;
-	height: 85vh;
-	z-index: 10;
+	height: 80vh;
+	z-index: 20;
 	color: white;
 	background-color: #31b572;
 	border-right: 5px solid rgba(255, 255, 255, 0.37);
@@ -17,8 +17,14 @@
 }
 
 .lmj-cart.open {
+	position: absolute;
 	transform: translateX(0);
 	transition: transform 1s ease-in-out;
+}
+
+.lmj-cart.scrolling {
+	position: fixed;
+	top: 0;
 }
 
 .lmj-cart-add-button {
@@ -117,6 +123,7 @@
 }
 
 .lmj-cart-closed {
+	z-index: 30;
 	transform: translatex(-150px);
 	position: absolute;
 	width: 250px;
@@ -125,9 +132,14 @@
 }
 
 .lmj-cart-closed.close {
-	position: fixed;
+	position: absolute;
 	transform: translatex(0);
 	transition: transform 1s ease-in-out;
+}
+
+.lmj-cart-closed.close.scrolling {
+	position: fixed;
+	top: 0;
 }
 
 .lmj-cart-closed > button {
@@ -215,6 +227,7 @@ h3 {
 	.lmj-cart {
 		width: 40%;
 		height: 75vh;
+		transform: translateX(-220px);
 	}
 
 	.lmj-item-cart {
@@ -224,6 +237,10 @@ h3 {
 
 	.lmj-remove-item-cart {
 		font-size: 0.9em;
+	}
+
+	.lmj-cart-closed.close {
+		position: absolute;
 	}
 	
 }

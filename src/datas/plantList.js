@@ -17,7 +17,7 @@ import caoutchouc from '../assets/caoutchouc.jpg'
 export const plantList = [
 	{
 		name: 'monstera',
-		category: 'classique',
+		category: 'intérieur',
 		id: '1ed',
 		light: 2,
 		water: 3,
@@ -26,7 +26,7 @@ export const plantList = [
 	},
 	{
 		name: 'ficus lyrata',
-		category: 'classique',
+		category: 'intérieur',
 		id: '2ab',
 		light: 3,
 		water: 1,
@@ -35,7 +35,7 @@ export const plantList = [
 	},
 	{
 		name: 'pothos argenté',
-		category: 'classique',
+		category: 'intérieur',
 		id: '3sd',
 		light: 1,
 		water: 2,
@@ -45,7 +45,7 @@ export const plantList = [
 	},
 	{
 		name: 'calathea',
-		category: 'classique',
+		category: 'intérieur',
 		id: '4kk',
 		light: 2,
 		water: 3,
@@ -127,7 +127,7 @@ export const plantList = [
 	},
 	{
 		name: 'pilea',
-		category: 'classique',
+		category: 'intérieur',
 		id: '6ty',
 		light: 3,
 		water: 2,
@@ -145,7 +145,7 @@ export const plantList = [
 	},
 	{
 		name: 'caoutchouc',
-		category: 'classique',
+		category: 'intérieur',
 		id: '4yu',
 		light: 1,
 		water: 2,

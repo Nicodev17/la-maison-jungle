@@ -1,0 +1,116 @@
+/* Style de la Fenêtre Modale - informations sur la plante */
+.lmj-plant-modal {
+	z-index: 10;
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	background-color: white;
+	border: 10px solid rgb(241, 241, 241);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.lmj-plant-modal-content {
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+}
+
+#lmj-close-modal {
+	z-index: 15;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 5px 5px 0 0;
+	cursor: pointer;
+}
+
+/* CONTENU DE GAUCHE (modale) */
+#lmj-modal-cover {
+	width: 350px;
+	height: 350px;
+	border-radius: 20px;
+	object-fit: cover;
+}
+
+/* CONTENU DE DROITE (modale) */
+#lmj-modal-right-content {
+	width: 50%;
+	height: 80%;
+	/* border: 2px solid violet; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+#lmj-modal-right-content h4 {
+ 	text-transform: capitalize;
+	text-align: center;
+	margin-top: 0;
+}
+
+/* Zone du prix et des infos de soin */
+#lmj-modal-care-price-zone {
+	/* border: 2px solid violet; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#lmj-modal-care-zone {
+	display: flex;
+	flex-direction: column;
+}
+
+#modal-item-price {
+	border-radius: 20px;
+	background-color: #31b472;
+	color: white;
+	padding: 15px;
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+#modal-tips-zone {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#modal-tips-zone p {
+	width: 65%;
+	text-align: justify;
+}
+
+#modal-add-to-cart {
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	border: none;
+	background-color: #ffffff;
+	color: #8ac0a6;
+	border: 2px solid #8ac0a6;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-weight: bold;
+	outline: none;
+}
+
+#modal-add-to-cart:hover {
+	cursor: pointer;
+	background-color: #8ac0a6;
+	color: white;
+}
+
+#modal-logo-cart {
+	width: 25px;
+	height: auto;
+	opacity: 0.8;
+	border-radius: 0;
+	margin-left: 7px;
+}
