@@ -1,9 +1,15 @@
 /* Style de chaque item plante */
 .lmj-plant-item-cover {
+	z-index: 1;
 	height: 250px;
 	width: 250px;
 	border-radius: 20px;
 	object-fit: cover;
+}
+
+.lmj-plant-item-cover:hover {
+	cursor: pointer;
+	scale: 101%;
 }
 
 .lmj-plant-item {
@@ -17,6 +23,7 @@
 }
 
 .lmj-plant-item-price {
+	z-index: 2;
 	position: absolute;
 	border-radius: 20px 20px 20px 0;
 	background-color: #31b472;
@@ -25,6 +32,7 @@
 	right: 0;
 	top: 0;
 	font-weight: 500;
+	cursor: pointer;
 }
 
 .lmj-add-to-cart {

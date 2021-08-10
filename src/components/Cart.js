@@ -6,13 +6,22 @@ function Cart({ cart, updateCart }) {
     const [isOpen, setIsOpen] = useState(false);
     const totalPrice = cart.reduce(
         (acc, plantType) => acc + plantType.amount * plantType.price,
-        0
-    );
-
+        0 );
     const totalItems = cart.reduce(
         (acc, plantType) => acc + plantType.amount,
-        0
-    );
+        0 );
+    const refCart = useRef(null);
+    const refAddPop = useRef(null);
+
+    window.onscroll = function() {cartScroll()};
+
+    function cartScroll() {
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            refCart.current.classList.add('scrolling');
+        } else {
+            refCart.current.classList.remove('scrolling');
+        }
+    }
 
     function removeToCart(amount, name, price) {
         const currentPlantToRemove = cart.find((plant) => plant.name === name);
@@ -32,18 +41,21 @@ function Cart({ cart, updateCart }) {
             ]);
         }
     }
-    
-    const refCart = useRef(null);
-    const refAddPop = useRef(null);
 
     useEffect(() => {
-        document.title = `JH: ${totalPrice}€ d'achat`;
+        if(totalPrice > 0) {
+            document.title = `JH: ${totalPrice}€ d'achat`;
+        } else {
+            document.title = `Jungle House 🌿`;
+        }
         
         if(isOpen === true) {
+            window.scrollBy(0, 1);
             refCart.current.classList.add('open');
             refCart.current.classList.remove('close');
 
-        } else { 
+        } else {
+            window.scrollBy(0, 1);
             refCart.current.classList.remove('open');
             refCart.current.classList.add('close');
         }
