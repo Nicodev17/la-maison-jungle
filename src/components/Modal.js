@@ -1,5 +1,18 @@
+import CareScale from './CareScale';
 import logoCart from '../assets/logo_cart2.png';
 import '../styles/Modal.css';
+
+const typeLabel = {
+    'extérieur': 'd\'intérieur',
+    'intérieur': 'd\'extérieur',
+    'plante grasse': 'grasse'
+};
+
+const quantityLabel = {
+    1: 'peu',
+    2: 'modérément',
+    3: 'beaucoup'
+};
 
 function Modal({addToCart, name, cover, id, light, water, price, category}) {
     return (
@@ -9,14 +22,15 @@ function Modal({addToCart, name, cover, id, light, water, price, category}) {
                 <h4>{name}</h4>
                 <div id="lmj-modal-care-price-zone">
                     <div id="lmj-modal-care-zone"> 
-                        <span>{light} en lumière</span>
-                        <span>{water} en eau</span>
-                        <span>Plante d'{category}</span>
+                        <CareScale careType='water' scaleValue={water} />
+                        <CareScale careType='light' scaleValue={light} />
+                        <span>{category}</span>
                     </div>
                     <span id="modal-item-price">{price}€</span>
                 </div>
                 <div id="modal-tips-zone">
-                    <p> Cette plante d'une grande beauté vous confèrera une décoration comme nulle autre ! ✨</p>
+                    <p> Cette plante {typeLabel[category]} vous confèrera une décoration comme nulle autre ! ✨ 
+                    <br></br> <br></br> Pour sa bonne santé, assurez-vous de lui donner {quantityLabel[light]} de lumière et {quantityLabel[water]} d'eau.</p>
                 </div>
                 <button id="modal-add-to-cart" onClick={() => addToCart(name, price)}>
                 Ajouter au panier 

@@ -21,7 +21,7 @@ function CareScale({scaleValue, careType}) {
 
     return (
         <div>
-            <span className='lmj-care-scale-info' aria-label={`Cette plante requiert ${quantityLabel[scaleValue]} ${careType === 'light' ? 'de lumière' : "d'arrosage"}`}>
+            <span className='lmj-care-scale-info' aria-label={`Requiert ${quantityLabel[scaleValue]} ${careType === 'light' ? 'de lumière' : "d'arrosage"}`}>
                 {range.map((rangeElem) =>
                     scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
                 )}

@@ -13,7 +13,7 @@
 }
 
 .lmj-plant-item {
-	margin: 20px;
+	margin: 0 20px 0 20px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -35,8 +35,42 @@
 	cursor: pointer;
 }
 
+.lmj-plant-item p {
+	margin: 10px 0 0 5px;
+}
+
+.lmj-care-scale-info {
+	position: relative; /* les .infobulle deviennent référents */
+	cursor: help;
+}
+
+.lmj-plant-item .lmj-care-scale-info {
+	margin-left: 5px;
+}
+
+.lmj-care-scale-info:hover::after,
+.lmj-care-scale-info:focus::after {
+  content: attr(aria-label);  /* on affiche aria-label */
+  position: absolute;
+  top: -2.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  white-space: nowrap;  /* on interdit le retour à la ligne */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.932);
+  border: 2px solid #8ac0a6;
+  border-radius: 10px;
+  color: #31b472;
+  text-transform: none;
+}
+
 .lmj-add-to-cart {
-	margin-left: 20px;
+	margin: 8px 0 35px 25px; /* /!\ Le margin bottom ici détermine l'espace entre les plant item de la liste */
 	border: none;
 	background-color: #ffffff;
 	color: #8ac0a6;
@@ -51,30 +85,4 @@
 	cursor: pointer;
 	background-color: #8ac0a6;
 	color: white;
-}
-
-.lmj-care-scale-info {
-	position: relative;  /* les .infobulle deviennent référents */
-  	cursor: help;
-}
-
-.lmj-care-scale-info:hover::after,
-.lmj-care-scale-info:focus::after {
-  content: attr(aria-label);  /* on affiche aria-label */
-  position: absolute;
-  top: -2.1em;
-  left: 50%;
-  transform: translateX(-50%); /* on centre horizontalement  */
-  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
-  white-space: nowrap;  /* on interdit le retour à la ligne */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 15px;
-  background-color: rgba(255, 255, 255, 0.932);
-  border: 2px solid #8ac0a6;
-  border-radius: 10px;
-  color: #31b472;
-  text-transform: none;
 }
