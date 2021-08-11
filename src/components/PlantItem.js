@@ -10,7 +10,7 @@ function PlantItem({ name, cover, light, water, price}) {
             <img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} title="Voir l'article"/>
             {/* && précise que l'élément ne sera généré que si la condition est respectée (true)*/}
             {/* {isSpecialOffer && <div className='lmj-sales'>Soldes</div>} */}
-            {name}
+            <p>{name}</p>
             <div>
                 <CareScale careType='water' scaleValue={water} />
                 <CareScale careType='light' scaleValue={light} />

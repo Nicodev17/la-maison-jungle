@@ -17,13 +17,35 @@
 	flex-direction: row;
 }
 
+#lmj-close-modal a {
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 #lmj-close-modal {
 	z-index: 15;
 	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 5px 5px 0 0;
+	margin: 10px 10px 0 0;
+	width: 27px;
+	height:27px;
+	font-size: 0.9em;
+	color: #a4d3bc;
+	background-color: rgba(255, 255, 255, 0.863);
+	border: 3px solid #a4d3bc;
+	border-radius: 7px;
+	outline-style: none;
+	font-weight: bold;
 	cursor: pointer;
+}
+
+#lmj-close-modal:hover {
+	color: white;
+	background-color: #a4d3bc;	
+	border: 3px solid #a4d3bc;
 }
 
 /* CONTENU DE GAUCHE (modale) */
@@ -37,7 +59,7 @@
 /* CONTENU DE DROITE (modale) */
 #lmj-modal-right-content {
 	width: 50%;
-	height: 80%;
+	height: 350px;
 	/* border: 2px solid violet; */
 	display: flex;
 	flex-direction: column;
@@ -56,12 +78,13 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
 }
 
 #lmj-modal-care-zone {
 	display: flex;
 	flex-direction: column;
+	text-transform: capitalize;
 }
 
 #modal-item-price {

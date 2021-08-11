@@ -44,7 +44,7 @@ function ShoppingList({ cart, updateCart }) {
                 <ul className='lmj-plant-list'>
                     {plantList.map(({name, cover, id, light, water, price, category}) =>
                         !activeCategory || activeCategory === category ? (
-                            <div key={id}>
+                            <div key={id} id={id}>
                                 <div onClick={() => {setModalIsOpen(true); setIdModal(id)} }>
                                     <PlantItem 
                                         id={id} 
@@ -62,7 +62,10 @@ function ShoppingList({ cart, updateCart }) {
                 </ul>
             ) : (
                 <div className='lmj-plant-modal'>
-                    <button id='lmj-close-modal' onClick={() => setModalIsOpen(false)}>Fermer</button>
+                    {window.scroll(0, 0)}
+                    <a href={`#${plantItem.id}`}>
+                        <button id='lmj-close-modal' title='Fermer' onClick={() => setModalIsOpen(false)}>✖</button>
+                    </a>
                     <Modal
                         addToCart={addToCart}
                         name={plantItem.name} 
